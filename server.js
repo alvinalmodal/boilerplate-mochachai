@@ -1,4 +1,5 @@
 "use strict";
+require("dotenv").config();
 const express = require("express");
 const app = express();
 
@@ -84,10 +85,10 @@ app.get(
   }
 );
 
-let port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, function () {
-  console.log(`Listening on port ${port}`);
+app.listen(PORT, function () {
+  console.log(`Listening on port ${PORT}`);
   console.log("Running Tests...");
   runner.run();
   // setTimeout(function () {
