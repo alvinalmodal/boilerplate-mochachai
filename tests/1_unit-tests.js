@@ -23,17 +23,17 @@ suite("Unit Tests", function () {
       assert.isOk("I'm truthy", "a string is truthy");
       assert.isOk(true, "true is truthy");
     });
+    // #4
+    test("#isTrue, #isNotTrue", function () {
+      assert.isTrue(true, "true is true");
+      assert.isTrue(!!"double negation", "double negation of a truthy is true");
+      assert.isNotTrue(
+        { value: "truthy" },
+        "A truthy object is NOT TRUE (neither is false...)"
+      );
+    });
   });
 
-  //   // #4
-  //   test("#isTrue, #isNotTrue", function () {
-  //     assert.fail(true, "true is true");
-  //     assert.fail(!!"double negation", "double negation of a truthy is true");
-  //     assert.fail(
-  //       { value: "truthy" },
-  //       "A truthy object is NOT TRUE (neither is false...)"
-  //     );
-  //   });
   // });
 
   // // -----------------------------------------------------------------------------
