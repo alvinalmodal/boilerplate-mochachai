@@ -38,35 +38,39 @@ suite("Unit Tests", function () {
 
   // // -----------------------------------------------------------------------------
 
-  // suite("Equality", function () {
-  //   // #5
-  //   test("#equal, #notEqual", function () {
-  //     assert.fail(12, "12", "numbers are coerced into strings with == ");
-  //     assert.fail({ value: 1 }, { value: 1 }, "== compares object references");
-  //     assert.fail(6 * "2", "12", "no more hints...");
-  //     assert.fail(6 + "2", "12", "type your error message if you want");
-  //   });
-  //   // #6
-  //   test("#strictEqual, #notStrictEqual", function () {
-  //     assert.fail(6, "6");
-  //     assert.fail(6, 3 * 2);
-  //     assert.fail(6 * "2", 12);
-  //     assert.fail([1, "a", {}], [1, "a", {}]);
-  //   });
-  //   // #7
-  //   test("#deepEqual, #notDeepEqual", function () {
-  //     assert.fail(
-  //       { a: "1", b: 5 },
-  //       { b: 5, a: "1" },
-  //       "keys order doesn't matter"
-  //     );
-  //     assert.fail(
-  //       { a: [5, 6] },
-  //       { a: [6, 5] },
-  //       "array elements position does matter !!"
-  //     );
-  //   });
-  // });
+  suite("Equality", function () {
+    // #5
+    test("#equal, #notEqual", function () {
+      assert.equal(12, "12", "numbers are coerced into strings with == ");
+      assert.notEqual(
+        { value: 1 },
+        { value: 1 },
+        "== compares object references"
+      );
+      assert.equal(6 * "2", "12", "no more hints...");
+      assert.notEqual(6 + "2", "12", "type your error message if you want");
+    });
+    // // #6
+    // test("#strictEqual, #notStrictEqual", function () {
+    //   assert.fail(6, "6");
+    //   assert.fail(6, 3 * 2);
+    //   assert.fail(6 * "2", 12);
+    //   assert.fail([1, "a", {}], [1, "a", {}]);
+    // });
+    // // #7
+    // test("#deepEqual, #notDeepEqual", function () {
+    //   assert.fail(
+    //     { a: "1", b: 5 },
+    //     { b: 5, a: "1" },
+    //     "keys order doesn't matter"
+    //   );
+    //   assert.fail(
+    //     { a: [5, 6] },
+    //     { a: [6, 5] },
+    //     "array elements position does matter !!"
+    //   );
+    // });
+  });
 
   // // -----------------------------------------------------------------------------
 
