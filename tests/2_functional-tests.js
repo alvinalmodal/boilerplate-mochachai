@@ -89,12 +89,17 @@ suite("Functional Tests", function () {
           done();
         });
       });
-      // // #6
-      // test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
-      //   assert.fail();
-
-      //   done();
-      // });
+      // #6
+      test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
+        browser.fill("surname", "Vespucci");
+        browser.pressButton("submit", function () {
+          browser.assert.status(200);
+          browser.assert.text("span#name", "Amerigo");
+          browser.assert.text("span#surname", "Vespucci");
+          browser.assert.elements("span#dates", 1);
+          done();
+        });
+      });
     });
   });
 });
