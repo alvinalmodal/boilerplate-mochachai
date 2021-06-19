@@ -93,11 +93,11 @@ suite("Unit Tests", function () {
       assert.isBelow(5 % 2, 2);
       assert.isBelow(2 / 3, 1);
     });
-    // // #10
-    // test("#approximately", function () {
-    //   assert.fail(weirdNumbers(0.5), 1, 0);
-    //   assert.fail(weirdNumbers(0.2), 1, 0);
-    // });
+    // #10
+    test("#approximately", function () {
+      assert.approximately(weirdNumbers(0.5), 1, 3);
+      assert.approximately(weirdNumbers(0.2), 1, 3);
+    });
   });
 
   // // -----------------------------------------------------------------------------
