@@ -30,18 +30,20 @@ suite("Functional Tests", function () {
           done();
         });
     });
-    //     // #3
-    //     test('send {surname: "Colombo"}', function (done) {
-    //       chai
-    //         .request(server)
-    //         .put("/travellers")
-
-    //         .end(function (err, res) {
-    //           assert.fail();
-
-    //           done();
-    //         });
-    //     });
+    // #3
+    test('send {surname: "Colombo"}', function (done) {
+      chai
+        .request(server)
+        .put("/travellers")
+        .send({ surname: "Colombo" })
+        .end(function (err, res) {
+          assert.equal(res.status, 200);
+          assert.equal(res.body.name, "Cristoforo");
+          assert.equal(res.body.surname, "Colombo");
+          assert.equal(res.body.dates, "1451 - 1506");
+          done();
+        });
+    });
     //     // #4
     //     test('send {surname: "da Verrazzano"}', function (done) {
     //       assert.fail();
