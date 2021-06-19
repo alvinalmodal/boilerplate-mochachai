@@ -93,7 +93,7 @@ suite("Functional Tests", function () {
       test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
         browser.fill("surname", "Vespucci");
         browser.pressButton("submit", function () {
-          browser.assert.status(200);
+          browser.assert.success();
           browser.assert.text("span#name", "Amerigo");
           browser.assert.text("span#surname", "Vespucci");
           browser.assert.elements("span#dates", 1);
