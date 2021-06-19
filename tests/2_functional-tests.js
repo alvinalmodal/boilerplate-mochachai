@@ -63,24 +63,36 @@ suite("Functional Tests", function () {
     });
   });
 
-  // const Browser = require("zombie");
+  const Browser = require("zombie");
 
-  // suite("Functional Tests with Zombie.js", function () {
+  if (process.env.DEV) {
+    Browser.localhost("example.com", process.env.PORT || 3000);
+  } else {
+    Browser.site = "https://fcc-mochachai.herokuapp.com";
+  }
 
-  //   suite('"Famous Italian Explorers" form', function () {
-  //     // #5
-  //     test('submit "surname" : "Colombo" - write your e2e test...', function (done) {
-  //       browser.fill("surname", "Colombo").pressButton("submit", function () {
-  //         assert.fail();
+  suite("Functional Tests with Zombie.js", function () {
+    const browser = new Browser();
+    suiteSetup(function (done) {
+      return browser.visit("/", done);
+    });
 
-  //         done();
-  //       });
-  //     });
-  //     // #6
-  //     test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
-  //       assert.fail();
+    suite('"Famous Italian Explorers" form', function () {
+      // #5
+      test('submit "surname" : "Colombo" - write your e2e test...', function (done) {
+        browser.fill("surname", "Colombo");
+        browser.pressButton("submit", function () {
+          assert.equal(browser.query("#surname").innerHTML, "Colombo");
 
-  //       done();
-  //     });
-  //   });
+          done();
+        });
+      });
+      // // #6
+      // test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
+      //   assert.fail();
+
+      //   done();
+      // });
+    });
+  });
 });
