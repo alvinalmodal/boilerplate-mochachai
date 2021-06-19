@@ -151,45 +151,45 @@ suite("Unit Tests", function () {
 
   // // -----------------------------------------------------------------------------
 
-  // const Car = function () {
-  //   this.model = "cedan";
-  //   this.engines = 1;
-  //   this.wheels = 4;
-  // };
+  const Car = function () {
+    this.model = "cedan";
+    this.engines = 1;
+    this.wheels = 4;
+  };
 
-  // const Plane = function () {
-  //   this.model = "737";
-  //   this.engines = ["left", "right"];
-  //   this.wheels = 6;
-  //   this.wings = 2;
-  // };
+  const Plane = function () {
+    this.model = "737";
+    this.engines = ["left", "right"];
+    this.wheels = 6;
+    this.wings = 2;
+  };
 
-  // const myCar = new Car();
-  // const airlinePlane = new Plane();
+  const myCar = new Car();
+  const airlinePlane = new Plane();
 
-  // suite("Objects", function () {
-  //   // #16
-  //   test("#property, #notProperty", function () {
-  //     assert.fail(myCar, "wings", "A car has not wings");
-  //     assert.fail(airlinePlane, "engines", "planes have engines");
-  //     assert.fail(myCar, "wheels", "Cars have wheels");
-  //   });
-  //   // #17
-  //   test("#typeOf, #notTypeOf", function () {
-  //     assert.fail(myCar, "object");
-  //     assert.fail(myCar.model, "string");
-  //     assert.fail(airlinePlane.wings, "string");
-  //     assert.fail(airlinePlane.engines, "array");
-  //     assert.fail(myCar.wheels, "number");
-  //   });
-  //   // #18
-  //   test("#instanceOf, #notInstanceOf", function () {
-  //     assert.fail(myCar, Plane);
-  //     assert.fail(airlinePlane, Plane);
-  //     assert.fail(airlinePlane, Object, "everything is an Object");
-  //     assert.fail(myCar.wheels, String);
-  //   });
-  // });
+  suite("Objects", function () {
+    // #16
+    test("#property, #notProperty", function () {
+      assert.notProperty(myCar, "wings", "A car has not wings");
+      assert.property(airlinePlane, "engines", "planes have engines");
+      assert.property(myCar, "wheels", "Cars have wheels");
+    });
+    // // #17
+    // test("#typeOf, #notTypeOf", function () {
+    //   assert.fail(myCar, "object");
+    //   assert.fail(myCar.model, "string");
+    //   assert.fail(airlinePlane.wings, "string");
+    //   assert.fail(airlinePlane.engines, "array");
+    //   assert.fail(myCar.wheels, "number");
+    // });
+    // // #18
+    // test("#instanceOf, #notInstanceOf", function () {
+    //   assert.fail(myCar, Plane);
+    //   assert.fail(airlinePlane, Plane);
+    //   assert.fail(airlinePlane, Object, "everything is an Object");
+    //   assert.fail(myCar.wheels, String);
+    // });
+  });
 
   // -----------------------------------------------------------------------------
 });
