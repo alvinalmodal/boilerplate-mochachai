@@ -82,8 +82,10 @@ suite("Functional Tests", function () {
       test('submit "surname" : "Colombo" - write your e2e test...', function (done) {
         browser.fill("surname", "Colombo");
         browser.pressButton("submit", function () {
-          assert.equal(browser.query("#surname").innerHTML, "Colombo");
-
+          browser.assert.success();
+          browser.assert.text("span#name", "Cristoforo");
+          browser.assert.text("span#surname", "Colombo");
+          browser.assert.element("span#dates");
           done();
         });
       });
